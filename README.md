@@ -1,11 +1,12 @@
-# aerobicio box
+# aerobic.io box
 
-- ubuntu 12.04
-- ruby 2.0.0
-- node 10.0.21
-- bundler 1.5
+[![wercker status](https://app.wercker.com/status/6bc13860473b6e8f63bac48e69a4452c/m "wercker status")](https://app.wercker.com/project/bykey/6bc13860473b6e8f63bac48e69a4452c)
 
-Also properly installs fonts for X11, and google chrome.
+An Ubuntu 12.04 box with;
+
+- ruby 2.0.0-p247
+- node v10.0.21
+- bundler 1.5.0.rc.1
 
 # License
 
@@ -29,9 +30,3 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-# Changelog
-
-## 0.0.1
-
-- Initial release

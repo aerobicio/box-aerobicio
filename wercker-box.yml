@@ -1,5 +1,5 @@
-name: ubuntu12.04-ruby2.0.0
-version: 0.0.2
+name: aerobic.io
+version: 0.0.3
 inherits: wercker/ubuntu12.04-webessentials@0.0.12
 type: main
 platform: ubuntu@12.04
@@ -9,26 +9,24 @@ packages:
 keywords:
   - ruby
   - node
+  - google-chrome
+  - xvfb
 script: |
-  export RUBYVERSION=2.0.0-p247
-  export NODEVERSION=0.10.21
-  export BUNDLERVERSION=1.5.0.rc.1
-
   # global things
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
   sudo apt-get update
-  sudo apt-get install -y openjdk-6-jre-headless zlib1g-dev libreadline-dev libqtwebkit-dev xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic xserver-xorg-core x11-apps google-chrome-stable
+  sudo apt-get install -y openjdk-6-jre-headless zlib1g-dev libreadline-dev libqtwebkit-dev libfreetype6-dev libfontconfig1-dev x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic xserver-xorg-core x11-apps google-chrome-stable
 
   # ruby
   sudo apt-get remove ruby1.9.1
   cd $HOME
   mkdir rubyinstall
   cd rubyinstall
-  wget ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-$RUBYVERSION.tar.gz
-  tar xzvf ruby-$RUBYVERSION.tar.gz
-  cd ruby-$RUBYVERSION
+  wget ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-$RUBY_VERSION.tar.gz
+  tar xzvf ruby-$RUBY_VERSION.tar.gz
+  cd ruby-$RUBY_VERSION
   ./configure --with-readline-dir=/usr/include/readline --with-openssl-dir=/usr/include/openssl
   make
   make test
@@ -40,19 +38,25 @@ script: |
   echo "RACK_ENV=test" | sudo tee -a /etc/environment
 
   # bundler 1.5 pre
-  sudo gem install bundler --pre -v $BUNDLERVERSION
+  sudo gem install bundler --pre -v $BUNDLER_VERSION
 
   # node.js
   sudo apt-get install -y wget build-essential
   cd $HOME
   mkdir nodeinstall
   cd nodeinstall
-  wget http://nodejs.org/dist/v$NODEVERSION/node-v$NODEVERSION.tar.gz
-  tar xzvf node-v$NODEVERSION.tar.gz
-  cd node-v$NODEVERSION
+  wget http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.gz
+  tar xzvf node-v$NODE_VERSION.tar.gz
+  cd node-v$NODE_VERSION
   ./configure
   make
   sudo make install
   cd $HOME
   rm -fr nodeinstall
   node -v
+
+env:
+  RUBY_VERSION: "2.0.0-p247"
+  NODE_VERSION: "0.10.21"
+  BUNDLER_VERSION: "1.5.0.rc.1"
+  DISPLAY: ":99.0"

@@ -3,6 +3,9 @@
 - ubuntu 12.04
 - ruby 2.0.0
 - node 10.0.21
+- bundler 1.5
+
+Also properly installs fonts for X11, and google chrome.
 
 # License
 

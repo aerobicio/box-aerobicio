@@ -11,7 +11,7 @@ keywords:
   - node
 script: |
   export RUBYVERSION=2.0.0-p247
-  export NODEVERSION=0.10.17
+  export NODEVERSION=0.10.21
   export BUNDLERVERSION=1.5.0.rc.1
 
   # global things

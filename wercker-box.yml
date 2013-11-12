@@ -21,11 +21,7 @@ script: |
   sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
   sudo apt-get update
-  sudo apt-get install -y git openjdk-6-jre-headless zlib1g-dev \
-    libreadline-dev libqtwebkit-dev libfreetype6-dev libfontconfig1-dev \
-    x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic \
-    xserver-xorg-core x11-apps google-chrome-stable python-dev libjpeg-dev \
-    libfreetype6-dev zlib1g-dev
+  sudo apt-get install -y git openjdk-6-jre-headless zlib1g-dev libreadline-dev libqtwebkit-dev libfreetype6-dev libfontconfig1-dev x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic xserver-xorg-core x11-apps google-chrome-stable python-dev libjpeg-dev libfreetype6-dev zlib1g-dev
 
   # required for compiling some image based packages
   sudo ln -s /usr/lib/`uname -i`-linux-gnu/libfreetype.so /usr/lib/

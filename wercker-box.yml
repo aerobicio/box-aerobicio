@@ -1,5 +1,5 @@
 name: aerobic.io
-version: 0.0.4
+version: 0.0.5
 inherits: wercker/ubuntu12.04-webessentials@0.0.12
 type: main
 platform: ubuntu@12.04
@@ -21,7 +21,16 @@ script: |
   sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
   sudo apt-get update
-  sudo apt-get install -y git openjdk-6-jre-headless zlib1g-dev libreadline-dev libqtwebkit-dev libfreetype6-dev libfontconfig1-dev x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic xserver-xorg-core x11-apps google-chrome-stable
+  sudo apt-get install -y git openjdk-6-jre-headless zlib1g-dev \
+    libreadline-dev libqtwebkit-dev libfreetype6-dev libfontconfig1-dev \
+    x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic \
+    xserver-xorg-core x11-apps google-chrome-stable python-dev libjpeg-dev \
+    libfreetype6-dev zlib1g-dev
+
+  # required for compiling some image based packages
+  sudo ln -s /usr/lib/`uname -i`-linux-gnu/libfreetype.so /usr/lib/
+  sudo ln -s /usr/lib/`uname -i`-linux-gnu/libjpeg.so /usr/lib/
+  sudo ln -s /usr/lib/`uname -i`-linux-gnu/libz.so /usr/lib/
 
   # ruby
   sudo apt-get remove ruby1.9.1

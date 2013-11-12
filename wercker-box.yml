@@ -15,6 +15,9 @@ script: |
   export BUNDLERVERSION=1.5.0.rc.1
 
   # global things
+  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+
   sudo apt-get update
   sudo apt-get install -y openjdk-6-jre-headless zlib1g-dev libreadline-dev libqtwebkit-dev xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic xserver-xorg-core x11-apps google-chrome-stable
 

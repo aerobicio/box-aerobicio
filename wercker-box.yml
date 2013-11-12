@@ -16,7 +16,7 @@ script: |
 
   # global things
   sudo apt-get update
-  sudo apt-get install -y zlib1g-dev libreadline-dev libqtwebkit-dev xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic xserver-xorg-core x11-apps google-chrome-stable
+  sudo apt-get install -y openjdk-6-jre-headless zlib1g-dev libreadline-dev libqtwebkit-dev xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic xserver-xorg-core x11-apps google-chrome-stable
 
   # ruby
   sudo apt-get remove ruby1.9.1

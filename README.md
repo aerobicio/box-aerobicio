@@ -1,15 +1,14 @@
-# ubuntu12.04-ruby2.0.0 box
+# aerobicio box
 
-ubuntu12.04-ruby2.0.0
-
-# What's new
-- Update reference to web-essentials version 0.0.12
+- ubuntu 12.04
+- ruby 2.0.0
+- node 10.0.21
 
 # License
 
 The MIT License (MIT)
 
-Copyright (c) 2013 wercker
+Copyright (c) 2013 aerobicio
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -30,33 +29,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Changelog
 
-## 0.3.1
-
-- Update reference to web-essentials version `0.0.12`
-
-## 0.3.0
-
-- Update reference to web-essentials version `0.0.11`
-
-## 0.2.0
-
-- `libqtwebkit-dev` installed on box for Capybara purposes
-
-## 0.1.9
-
-- `RAILS_ENV` and `RACK_ENV` are now exported with "test"
-
-## 0.1.5
-
-- Update inheritance to wercker/ubuntu12.04-webessentials@0.0.5
-- Update wercker-essential-cookbook to 0.0.4
-- Update phantomjs to 1.9.1
-
-## 0.1.3
-
-- Add license
-- Update readme
-
-## 0.1.2
+## 0.0.1
 
 - Initial release

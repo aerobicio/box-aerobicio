@@ -12,6 +12,10 @@ keywords:
   - google-chrome
   - xvfb
 script: |
+  export RUBY_VERSION=2.0.0-p247
+  export NODE_VERSION=0.10.21
+  export BUNDLER_VERSION=1.5.0.rc.1
+
   # global things
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
@@ -59,4 +63,3 @@ env:
   RUBY_VERSION: "2.0.0-p247"
   NODE_VERSION: "0.10.21"
   BUNDLER_VERSION: "1.5.0.rc.1"
-  DISPLAY: ":99.0"

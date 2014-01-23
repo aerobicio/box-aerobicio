@@ -14,7 +14,7 @@ keywords:
 script: |
   export RUBY_VERSION=2.0.0-p353
   export NODE_VERSION=0.10.21
-  export BUNDLER_VERSION=1.5.0.rc.1
+  export BUNDLER_VERSION=1.5.2
 
   # global things
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -67,4 +67,4 @@ script: |
 env:
   RUBY_VERSION: "2.0.0-p353"
   NODE_VERSION: "0.10.21"
-  BUNDLER_VERSION: "1.5.0.rc.1"
+  BUNDLER_VERSION: "1.5.2"

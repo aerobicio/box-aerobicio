@@ -6,7 +6,7 @@ An Ubuntu 12.04 box with;
 
 - ruby 2.0.0-p353
 - node v10.0.21
-- bundler 1.5.0.rc.1
+- bundler 1.5.2
 
 # License
 

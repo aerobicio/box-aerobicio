@@ -1,10 +1,10 @@
 name: aerobic.io
 version: 0.0.7
-inherits: wercker/ubuntu12.04-webessentials@1.0.0
+inherits: wercker/ubuntu12.04-webessentials@1.0.1
 type: main
 platform: ubuntu@12.04
 packages:
-  - ruby@2.0.0-p353
+  - ruby@2.1.1
   - nodejs@0.10.21
 keywords:
   - ruby
@@ -12,7 +12,7 @@ keywords:
   - google-chrome
   - xvfb
 script: |
-  export RUBY_VERSION=2.0.0-p353
+  export RUBY_VERSION=2.1.1
   export NODE_VERSION=0.10.21
   export BUNDLER_VERSION=1.5.2
 
@@ -47,7 +47,7 @@ script: |
   echo "RACK_ENV=test" | sudo tee -a /etc/environment
 
   # bundler 1.5 pre
-  sudo gem install bundler --pre -v $BUNDLER_VERSION
+  sudo gem install bundler -v $BUNDLER_VERSION
 
   # node.js
   sudo apt-get install -y wget build-essential
@@ -65,6 +65,6 @@ script: |
   node -v
 
 env:
-  RUBY_VERSION: "2.0.0-p353"
+  RUBY_VERSION: "2.1.1"
   NODE_VERSION: "0.10.21"
   BUNDLER_VERSION: "1.5.2"
